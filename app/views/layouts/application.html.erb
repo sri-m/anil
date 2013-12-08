@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anil</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+</head>
+<body>
+  <div id="main">
+    <header>
+      <%= render :partial => 'welcome/logo' %>
+      <%= render :partial => 'welcome/header' %>
+    </header>
+    <div id="site_content">
+      <%= render :partial => 'welcome/slider' %>
+      <div id="sidebar_container">
+        <%= render :partial => 'welcome/sidebar' %>
+        <%= render :partial => 'welcome/usefullinks' %>
+      </div>
+      <div id="content">
+       <%= yield %>
+      </div>
+    </div>
+    <%= render :partial => 'welcome/footer' %>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  
+  <script type="text/javascript">
+    $(function() {
+      $("#lava_menu").lavaLamp({
+        fx: "backout",
+        speed: 700
+      });
+    });
+  </script>
+</body>
+</html>

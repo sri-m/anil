@@ -1,0 +1,24 @@
+ 	<nav>
+        <ul class="lavaLampWithImage" id="lava_menu">
+          <li class="current"><a href="/">Home</a></li>
+          <li><a href="/contacts">Members</a></li>
+          <li><a href="/video/myvideo">Video</a></li>
+          <li><a href="http://localhost:4000/myshop">Shop</a></li>
+          <li>
+          	<a href="/users/sign_in">
+          		<% if user_signed_in? %>
+  					<li>
+  						<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  					</li>
+				<% else %>
+  					<li>
+  						<%= link_to('Login', new_user_session_path)  %>  
+  					</li>
+				<% end %>
+          	</a>
+          </li>
+          <li><a href="/contacts/new">Contact</a></li>
+        </ul>
+     </nav>
+
+   

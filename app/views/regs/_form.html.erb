@@ -1,0 +1,53 @@
+<%= form_for(@reg) do |f| %>
+  <% if @reg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reg.errors.count, "error") %> prohibited this reg from being saved:</h2>
+
+      <ul>
+      <% @reg.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :cell %><br>
+    <%= f.text_field :cell %>
+  </div>
+  <div class="field">
+    <%= f.label :quli %><br>
+    <%= f.text_field :quli %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
